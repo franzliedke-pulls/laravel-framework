@@ -351,7 +351,7 @@ class Builder {
 	 */
 	protected function invalidOperatorAndValue($operator, $value)
 	{
-		$isOperator = in_array($operator, $this->operators);
+		$isOperator = in_array(strtolower($operator), $this->operators, true);
 
 		return ($isOperator and $operator != '=' and is_null($value));
 	}
